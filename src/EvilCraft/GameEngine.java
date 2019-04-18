@@ -20,6 +20,7 @@ package EvilCraft;
 import BridgePattern.ICanvasDevice;
 import BridgePattern.IGameEngine;
 import BridgePattern.ISoundDevice;
+import java.util.ArrayList;
 
 /**
  *
@@ -31,8 +32,11 @@ public class GameEngine implements IGameEngine{
     protected ICanvasDevice mainview;
     protected ICanvasDevice minimap;
     protected ISoundDevice soundDevice;
-    protected ICanvasDevice factoryPanel;
+    protected ICanvasDevice buttonCanvas;
     protected static GameEngine ge_instance = null;
+    protected ArrayList<Sprite> arrSprites = new ArrayList<Sprite>(); //moving objects
+    protected ArrayList<StaticObject> arrMapTiles = new ArrayList<StaticObject>();
+    protected ArrayList<Team> arrTeams = new ArrayList<Team>();
     //---------------- OPERATIONS ------------------
     /**
      * Constructor.
@@ -47,6 +51,7 @@ public class GameEngine implements IGameEngine{
         this.mapPath = mapPath;
         this.mainview = mainview;
         this.minimap = minimap;
+        this.buttonCanvas = factoryPanel;
         this.soundDevice = soundDevice;
         ge_instance = this;
     }
@@ -80,6 +85,52 @@ public class GameEngine implements IGameEngine{
     @Override
     public void onRegionSelected(ICanvasDevice canvas, int x1, int y1, int x2, int y2) {
         
+    }
+    
+    /**
+     * Load map tils and load them into the arrMapTiles of the GameEngine.
+     * Also create the Map object
+     * @param mapPath 
+     */
+    public void loadGameMap(String mapPath){
+        throw new UnsupportedOperationException("not implemented yet!");
+    }
+    
+    /**
+     * Return the left top corner of a free space close to (x,y)
+     * The requested free space's dimension is (w,h)
+     * @param x
+     * @param y
+     * @param w
+     * @param h
+     * @return 
+     */
+    public Point getFreeSpace(int x, int y, int w, int h){
+        throw new UnsupportedOperationException("not implemented yet!");
+    }
+    
+    public void addSprite(Sprite s){
+        throw new UnsupportedOperationException("not implemented yet!");
+    }
+    
+    public void removeSprite(Sprite s){
+        throw new UnsupportedOperationException("not implemented yet!");
+    }
+    
+    /**
+     * return null if no winner
+     * @return 
+     */
+    public Team CheckWinner(){
+        throw new UnsupportedOperationException("not implemented yet!");
+    }
+    
+    /**
+     * Display the message correspondingly
+     * @param winner 
+     */
+    public void endGame(Team winner){
+        throw new UnsupportedOperationException("not implemented yet!");
     }
     
 }

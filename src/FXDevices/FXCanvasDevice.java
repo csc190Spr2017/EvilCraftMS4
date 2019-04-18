@@ -191,4 +191,14 @@ public class FXCanvasDevice implements ICanvasDevice {
         this.viewportY = y;
     }
 
+    @Override
+    public void drawText(String msg, int x, int y, int fontsize) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void drawLine(int x1, int y1, int x2, int y2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

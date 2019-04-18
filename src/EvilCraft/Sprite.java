@@ -24,6 +24,44 @@ import BridgePattern.ICanvasDevice;
  * @author csc190
  */
 public abstract class Sprite {
+    //------- DATA MEMBERS ----------
+    protected int x, y, w, h;
+    protected Team team;
+    protected boolean bDead = false;
+    
+    //------- OPERATIONS -------------
+    protected void setDead(){
+        this.bDead = true;
+    }
+    
+    public boolean isDead(){
+        return this.bDead;
+    }
+    
+    protected void setPos(int x, int y){
+        this.x = x;
+        this.y = y;
+    }
+    
+    public Sprite(Team team, int x, int y, int w, int h){
+        this.team = team;
+        this.x = x;
+        this.y = y;
+        this.w= w;
+        this.h = h;
+    }
+    
+    public Team getTeam() {
+        return this.team;
+    }
+    
+    public int getX(){
+        return this.x;
+    }
+    
+    public int getY(){
+        return this.y;
+    }
     /**
      * update its own data attributes
      */

@@ -90,4 +90,22 @@ public interface ICanvasDevice {
      */
     public void setViewPort(int x, int y);
     
+    /**
+     * Draw the given message with the font size
+     * @param msg
+     * @param x
+     * @param y
+     * @param fontsize 
+     */
+    public void drawText(String msg, int x, int y, int fontsize);
+    
+    /**
+     * Draw a line from (x1,y1) to (x2,y2)
+     * @param x1
+     * @param y1
+     * @param x2
+     * @param y2 
+     */
+    public void drawLine(int x1, int y1, int x2, int y2);
+    
 }
