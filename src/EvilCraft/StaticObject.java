@@ -25,7 +25,16 @@ import BridgePattern.ICanvasDevice;
  */
 public class StaticObject extends Sprite{
 
-    public StaticObject(Team team, int x, int y, int w, int h) {
+    /***
+     * Using maptile e.g., "tree", can be used to build the picture path
+     * @param team
+     * @param x
+     * @param y
+     * @param w
+     * @param h
+     * @param maptile 
+     */
+    public StaticObject(Team team, int x, int y, int w, int h, String maptile) {
         super(team, x, y, w, h);
     }
 

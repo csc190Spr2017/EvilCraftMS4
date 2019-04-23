@@ -17,12 +17,19 @@
  */
 package EvilCraft;
 
+import BridgePattern.ICanvasDevice;
+
 /**
  * Map will be later used to provide routing information
  * @author csc190
  */
 public class Map {
-    public Map(String mapPath){
+    /**
+     * constructor
+     * @param mapPath
+     * @param canvas - can be used to readFile()
+     */
+    public Map(String mapPath, ICanvasDevice canvas){
         throw new UnsupportedOperationException("not implemented yet!");
     }
     

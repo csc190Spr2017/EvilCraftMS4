@@ -23,8 +23,8 @@ package EvilCraft;
  */
 public class Base extends StaticObject{
     
-    public Base(Team team, int x, int y, int w, int h) {
-        super(team, x, y, w, h);
+    public Base(Team team, int x, int y, int w, int h, String maptile) {
+        super(team, x, y, w, h, maptile);
     }
     
 }

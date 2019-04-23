@@ -30,7 +30,7 @@ public abstract class Sprite {
     protected boolean bDead = false;
     
     //------- OPERATIONS -------------
-    protected void setDead(){
+    public void setDead(){
         this.bDead = true;
     }
     
