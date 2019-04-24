@@ -108,4 +108,22 @@ public interface ICanvasDevice {
      */
     public void drawLine(int x1, int y1, int x2, int y2);
     
+    /**
+     * Draw a rectangle of a given color. Color can be hex string like "#FF0000" for red
+     * @param x
+     * @param y
+     * @param w
+     * @param h
+     * @param color 
+     */
+    public void drawRectangle(int x, int y, int w, int h, String color);
+    
+    /**
+     * Take a snapshot of the the canvas and save it in the given name.
+     * Actually no need to really save it to file system, just save the
+     * WritableImage in the hashmap system of the FXCanvas
+     * @param imgname 
+     */
+    public void takeSnapshot(String imgname);
+    
 }

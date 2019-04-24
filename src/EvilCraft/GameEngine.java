@@ -37,7 +37,9 @@ public class GameEngine implements IGameEngine{
     protected ArrayList<Sprite> arrSprites = new ArrayList<Sprite>(); //moving objects
     protected ArrayList<StaticObject> arrMapTiles = new ArrayList<StaticObject>();
     protected ArrayList<Team> arrTeams = new ArrayList<Team>();
-    //---------------- OPERATIONS ------------------
+    protected ArrayList<Sprite> arrSelected = null; //set by Drag operations and released by left click
+    protected MouseSprite mouseSprite = new MouseSprite();
+//---------------- OPERATIONS ------------------
     /**
      * Constructor.
      * An evil craft game engine has 3 canvases: main view, mini map and a panel for manufacturing units
@@ -131,6 +133,80 @@ public class GameEngine implements IGameEngine{
      */
     public void endGame(Team winner){
         throw new UnsupportedOperationException("not implemented yet!");
+    }
+    
+    /**
+     * Translates the (x1,y1) in canvas into the coordinates in Map
+     * @param canvas
+     * @param x1
+     * @param y1
+     * @return 
+     */
+    public Point getGlobalCoordinates(ICanvasDevice canvas, int x1, int y1, Map map){
+        throw new UnsupportedOperationException("not implemented yet");
+    }
+    
+    /**
+     * Return the new left-top corner of mainview so that center point is now
+     * located at the center of the mainview
+     * @param center
+     * @param mainview
+     * @return 
+     */
+    public Point getNewLeftTopCoordinates(Point center, ICanvasDevice mainview){
+        throw new UnsupportedOperationException("not implemented yet");
+    }
+    /**
+     * 
+     * @return human player team (by default it's arrTeams[0])
+     */
+    public Team getPlayerTeam(){
+        throw new UnsupportedOperationException("not implemented yet");
+    
+    }
+    
+    /**
+     * 
+     * @return computer team (by default it's arrTeams[1])
+     */
+    public Team getAITeam(){
+         throw new UnsupportedOperationException("not implemented yet");
+    }
+    
+    /**
+     * Get the units (including base but not map tiles) in between pt1 and pt2 that
+     * belongs to the given team. If team is null, then both team's units will be 
+     * included. Suggestion: use some advanced data storage to guarantee quick response!
+     * @param pt1
+     * @param pt2
+     * @param team
+     * @return 
+     */
+    public ArrayList<Sprite> getArrSprites(Point pt1, Point pt2, Team team){
+         throw new UnsupportedOperationException("not implemented yet");
+    }
+
+    @Override
+    public void onMouseMoved(ICanvasDevice canvas, int x, int y) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    /**
+     * Create a background WritableImage for the MiniMap.
+     * Implementation idea: draw all maptiles as colored squares on the mini maps
+     * canvas and take a snapshot and save it as a WritableImage. Later you can simply
+     * draw that image in the minimap's canvas.
+     * Note: call canvas.takeSnapshot function.
+     */
+    public void createBackground(){
+        throw new UnsupportedOperationException("not implemented");
+    }
+    
+    /**
+     * Take the previously saved snapshot of Minimap background and draw it.
+     */
+    public void drawBackgroundOfMiniMap(){
+        throw new UnsupportedOperationException("not impelemented");
     }
     
 }

@@ -68,6 +68,11 @@ public class ButtonController implements IGameEngine{
     public void onRegionSelected(ICanvasDevice canvas, int x1, int y1, int x2, int y2) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public void onMouseMoved(ICanvasDevice canvas, int x, int y) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    
     
 }
