@@ -26,7 +26,7 @@ import BridgePattern.ICanvasDevice;
 public class Airplane extends Sprite{
 
     public Airplane(Team team, int x, int y, int w, int h) {
-        super(team, x, y, w, h);
+        super(team, x, y, w, h, 40, 1, 1);
     }
 
     @Override
@@ -41,6 +41,21 @@ public class Airplane extends Sprite{
 
     @Override
     public void drawOnMiniMap(ICanvasDevice minimap) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Point getNextMove() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean isFacing(Point pt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void adjustBodyHeading(Point pt) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

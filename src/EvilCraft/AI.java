@@ -21,10 +21,23 @@ package EvilCraft;
  *
  * @author csc190
  */
-public class Base extends StaticObject{
+public class AI {
+    //-- data members 
+    protected Team team;
+    protected ButtonController btnController;
     
-    public Base(Team team, int x, int y, int w, int h, String maptile) {
-        super(team, x, y, w, h, maptile, 100);
+    //-- operations
+    public AI(Team team, ButtonController btnController){
+        this.team = team;
+        this.btnController = btnController;
+    }
+    
+    /**
+     * Called by GameEngine.onTick() for every 150 ticks.
+     * Make decision based on enemy info
+     */
+    public void update(){
+        throw new UnsupportedOperationException("Not implemented yet!");
     }
     
 }

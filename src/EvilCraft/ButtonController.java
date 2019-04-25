@@ -74,5 +74,25 @@ public class ButtonController implements IGameEngine{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
    
+    /**
+     * return true if there's money for it
+     */
+    public boolean spawnTank(){
+        throw new UnsupportedOperationException("not implemented yet");
+    }
+    
+    /**
+     * return true if there's money for it
+     */
+    public boolean spawnAircraft(){
+        throw new UnsupportedOperationException("not implemented yet");
+    }
+    
+    /**
+     * return true if there's money for it
+     */
+    public boolean spawnInfantry(){
+        throw new UnsupportedOperationException("not implemented yet");
+    }
     
 }

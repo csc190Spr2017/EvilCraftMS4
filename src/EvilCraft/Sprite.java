@@ -25,13 +25,24 @@ import BridgePattern.ICanvasDevice;
  */
 public abstract class Sprite {
     //------- DATA MEMBERS ----------
-    protected int x, y, w, h;
+    private int x, y, w, h;
+    private int altitude, blocking_score;
     protected Team team;
     protected boolean bDead = false;
     protected Sprite attackGoal = null;
     protected Point navigationGoal = null;
+    private int lifepoints;
+    
     
     //------- OPERATIONS -------------
+    public int getLifepoints(){
+        return this.lifepoints;
+    }
+    public void reduceLifepoints(int offset){
+        lifepoints-=offset;
+        if(lifepoints<0) lifepoints=0;
+    }
+    
     /**
      * Set the long term navigation goal to pt
      * @param pt 
@@ -55,17 +66,35 @@ public abstract class Sprite {
         return this.bDead;
     }
     
-    protected void setPos(int x, int y){
+    final protected void setPos(int x, int y){
         this.x = x;
         this.y = y;
     }
     
-    public Sprite(Team team, int x, int y, int w, int h){
+    /**
+     * Get next move (for next tick), seek approval from game engine, and turn body if necessary.
+     * NOTE this implementation only addresses  C3.2 BUT NOT C3.3
+     * You got to check C3.3.2 Sequence diagram, which shows how to
+     * decide next move based on navigation map.
+     */
+    final protected void setNextMove(){      
+        Point pt = this.getNextMove(); //virtual function
+        GameEngine ge = GameEngine.getInstance();
+        if(ge.approveNextMove(this, pt, this.w, this.h)){
+            this.setPos(pt.x, pt.y);
+        }
+    }
+    
+    
+    public Sprite(Team team, int x, int y, int w, int h, int lifepoints, int altitude, int block_score){
         this.team = team;
         this.x = x;
         this.y = y;
         this.w= w;
         this.h = h;
+        this.lifepoints = lifepoints;
+        this.altitude = altitude;
+        this.blocking_score = blocking_score;
     }
     
     public Team getTeam() {
@@ -79,6 +108,24 @@ public abstract class Sprite {
     public int getY(){
         return this.y;
     }
+    
+    public int getW(){
+        return this.w;
+    }
+    
+    public int getH(){
+        return this.h;
+    }
+    
+    public int getAltitude(){
+        return this.altitude;
+    }
+    
+    public int getBlockingScore(){
+        return this.blocking_score;
+    }
+    
+    
     /**
      * update its own data attributes
      */
@@ -95,4 +142,25 @@ public abstract class Sprite {
      * @param minimap - canvas device
      */
     public abstract void drawOnMiniMap(ICanvasDevice minimap);
+    
+    /**
+     * To be implemented by all sprites.
+     * @return 
+     */
+    public abstract Point getNextMove();
+    
+    /**
+     * if the body of the sprite is heading to pt
+     * @param pt
+     * @return 
+     */
+    public abstract boolean isFacing(Point pt);
+    
+    /**
+     * Adjust the body heading so that it is pointing to pt.
+     * Note that for Tank, multiple calls of adjustBodyHeading may be needed.
+     * @param pt
+     * @return 
+     */
+    public abstract void adjustBodyHeading(Point pt);
 }

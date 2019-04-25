@@ -17,6 +17,8 @@
  */
 package EvilCraft;
 
+import java.util.ArrayList;
+
 /**
  * Manages account information of a team
  * @author csc190
@@ -58,5 +60,10 @@ public class Team {
     
     public void addSprite(Sprite sprite){
         throw new UnsupportedOperationException("not implemented yet!");
+    }
+    
+    
+    public ArrayList<Sprite> getSprites(){       
+        throw new UnsupportedOperationException("not implemented yet");    
     }
 }

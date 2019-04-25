@@ -34,8 +34,8 @@ public class StaticObject extends Sprite{
      * @param h
      * @param maptile 
      */
-    public StaticObject(Team team, int x, int y, int w, int h, String maptile) {
-        super(team, x, y, w, h);
+    public StaticObject(Team team, int x, int y, int w, int h, String maptile, int lifepoints) {
+        super(team, x, y, w, h, lifepoints, 0, 0);
     }
 
     @Override
@@ -50,6 +50,21 @@ public class StaticObject extends Sprite{
 
     @Override
     public void drawOnMiniMap(ICanvasDevice minimap) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Point getNextMove() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean isFacing(Point pt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void adjustBodyHeading(Point pt) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

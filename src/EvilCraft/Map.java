@@ -59,4 +59,13 @@ public class Map {
     public boolean isObstacle(String maptile){
         throw new UnsupportedOperationException("not implemented yet!");
     }
+    
+    /**
+     * Generate the 2d cost matrix based on the map, for pt as destination.
+     * @param pt
+     * @return 
+     */
+    public int [][] generateBFSMap(Point pt){
+        throw new UnsupportedOperationException("not implemented yet");
+    }
 }

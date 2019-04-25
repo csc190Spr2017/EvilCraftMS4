@@ -212,4 +212,36 @@ public class GameEngine implements IGameEngine{
         throw new UnsupportedOperationException("not impelemented");
     }
     
+    /**
+     * Return the team info of the opponent team
+     * @param myteam
+     * @return 
+     */
+    public TeamInfo getEnemyTeamInfo(Team myteam){
+        throw new UnsupportedOperationException("not implemented yet");
+    }
+    
+    /**
+     * Approve if to allow propser to move to rectangle. Lefttop and width and height are provided
+     * Algorithm: call getArrSprites to get all colliding with rectangle, and then get the altitude and blocking score to decide.
+     * @param proposer
+     * @param lefttop_corner
+     * @param w
+     * @param y
+     * @return 
+     */
+    public boolean approveNextMove(Sprite proposer, Point lefttop_corner, int width, int height){
+        throw new UnsupportedOperationException("not implemented yet");
+    }
+    
+    /**
+     * The int[][] cost matrix is generated in onRightClick() and saved into a hashmap.
+     * Now simply retrieve it from hashmap
+     * @param dest
+     * @return 
+     */
+    public int [][] getBFSMap(Point dest){
+        throw new UnsupportedOperationException("not implemented yet");
+    }
+    
 }

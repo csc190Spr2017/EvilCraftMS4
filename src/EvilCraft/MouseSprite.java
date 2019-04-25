@@ -39,7 +39,7 @@ public class MouseSprite extends Sprite{
      * @param map 
      */
     public MouseSprite(ICanvasDevice mainview, ICanvasDevice minimap, Map map) {
-        super(null, 0, 0, 0, 0);
+        super(null, 0, 0, 0, 0, Integer.MAX_VALUE, 3, Integer.MAX_VALUE);
         this.mainview = mainview;
         this.minimap = minimap;
         this.map = map;
@@ -80,6 +80,21 @@ public class MouseSprite extends Sprite{
 
     @Override
     public void drawOnMiniMap(ICanvasDevice minimap) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Point getNextMove() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean isFacing(Point pt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void adjustBodyHeading(Point pt) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
