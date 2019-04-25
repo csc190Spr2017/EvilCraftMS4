@@ -123,7 +123,7 @@ public class MainAppMS4 extends Application {
         VBox vboxRight = new VBox();
         vboxRight.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
         Canvas canvasMiniMap = new Canvas(200,200);
-        FXCanvasDevice fxMiniMap = new FXCanvasDevice(canvasMainView);
+        FXCanvasDevice fxMiniMap = new FXCanvasDevice(canvasMiniMap);
         Canvas canvasFactory = new Canvas(200, 800);
         FXCanvasDevice fxFactoryPanel = new FXCanvasDevice(canvasFactory);
         canvasMiniMap.getGraphicsContext2D().strokeText("MiniMap", 20, 100);

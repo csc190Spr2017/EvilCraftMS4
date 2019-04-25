@@ -211,4 +211,14 @@ public class FXCanvasDevice implements ICanvasDevice {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
+    public int getX() {
+        return this.viewportX;
+    }
+
+    @Override
+    public int getY() {
+        return this.viewportY;
+    }
+
 }

@@ -25,10 +25,24 @@ import java.util.ArrayList;
  * @author csc190
  */
 public class MouseSprite extends Sprite{
-    
+    // --- DATA MEMBERS ---
+    protected ICanvasDevice mainview;
+    protected ICanvasDevice minimap;
+    protected Map map;
+    // --- DATA OPERATIONS ---
 
-    public MouseSprite() {
+    /**
+     * MouseSprite needs the dimension of mainview, minimap, and map to translate coordinates.
+     * It also uses 
+     * @param mainview
+     * @param minimap
+     * @param map 
+     */
+    public MouseSprite(ICanvasDevice mainview, ICanvasDevice minimap, Map map) {
         super(null, 0, 0, 0, 0);
+        this.mainview = mainview;
+        this.minimap = minimap;
+        this.map = map;
     }
     
     /***

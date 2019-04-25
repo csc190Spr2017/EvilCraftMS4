@@ -55,6 +55,18 @@ public interface ICanvasDevice {
     public int getHeight();
     
     /**
+     * Get the x coordinate (map coordinate) in map
+     * @return 
+     */
+    public int getX();
+    
+    /**
+     * Get the y coordinate (map coordinate) in map
+     * @return 
+     */
+    public int getY();
+    
+    /**
      * Create the named stop watch for measuring performance
      * @param name - name of the stop watch
      * @return non-null instance of a stop watch object

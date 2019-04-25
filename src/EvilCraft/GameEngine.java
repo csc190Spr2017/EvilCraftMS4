@@ -29,6 +29,7 @@ import java.util.ArrayList;
 public class GameEngine implements IGameEngine{
     // -------------- DATA MEBERS ------------------
     protected String mapPath;
+    protected Map map;
     protected ICanvasDevice mainview;
     protected ICanvasDevice minimap;
     protected ISoundDevice soundDevice;
@@ -38,7 +39,7 @@ public class GameEngine implements IGameEngine{
     protected ArrayList<StaticObject> arrMapTiles = new ArrayList<StaticObject>();
     protected ArrayList<Team> arrTeams = new ArrayList<Team>();
     protected ArrayList<Sprite> arrSelected = null; //set by Drag operations and released by left click
-    protected MouseSprite mouseSprite = new MouseSprite();
+    protected MouseSprite mouseSprite;
 //---------------- OPERATIONS ------------------
     /**
      * Constructor.
@@ -55,6 +56,7 @@ public class GameEngine implements IGameEngine{
         this.minimap = minimap;
         this.buttonCanvas = factoryPanel;
         this.soundDevice = soundDevice;
+        
         ge_instance = this;
     }
     
@@ -66,6 +68,7 @@ public class GameEngine implements IGameEngine{
     public void init() {
         //DON'T KILL THE following line
         ge_instance  = this;
+        this.mouseSprite = new MouseSprite(mainview, minimap, map);
         //DON'T KILL THE ABOVE LINE
     }
 
