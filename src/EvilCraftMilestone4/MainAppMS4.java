@@ -139,7 +139,7 @@ public class MainAppMS4 extends Application {
         FXSoundDevice fxSound = new FXSoundDevice();
         
         //4. Create Test Scenario Buttons
-        GameEngine g1 = new GameEngine("resources/map/small.txt", fxMainView, fxMiniMap, fxFactoryPanel, fxSound);
+        ModuleBTestGameEngine g1 = new ModuleBTestGameEngine("resources/map/small.txt", fxMainView, fxMiniMap, fxFactoryPanel, fxSound);
         createButton("Test1", g1, vboxTestButtons);
         
        
