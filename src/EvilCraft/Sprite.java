@@ -18,6 +18,7 @@
 package EvilCraft;
 
 import BridgePattern.ICanvasDevice;
+import java.util.Random;
 
 /**
  * Base class of all game objects
@@ -29,9 +30,10 @@ public abstract class Sprite {
     private int altitude, blocking_score;
     protected Team team;
     protected boolean bDead = false;
-    protected Sprite attackGoal = null;
+    protected String attackGoal = null;
     protected Point navigationGoal = null;
     private int lifepoints;
+    protected String id;
     
     
     //------- OPERATIONS -------------
@@ -55,7 +57,7 @@ public abstract class Sprite {
      * Set the PRIORITY attack goal. If sp is in the range, it should be attacked first.
      * @param sp 
      */
-    public void setAttackGoal(Sprite sp){
+    public void setAttackGoal(String sp){
         this.attackGoal = sp;
     }
     public void setDead(){
@@ -95,6 +97,12 @@ public abstract class Sprite {
         this.lifepoints = lifepoints;
         this.altitude = altitude;
         this.blocking_score = blocking_score;
+        Random rand = new Random();
+        this.id = String.valueOf(rand.nextInt())+"_" + String.valueOf(rand.nextInt());
+    }
+    
+    public String getID(){
+        return this.id;
     }
     
     public Team getTeam() {
