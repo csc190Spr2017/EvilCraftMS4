@@ -23,10 +23,10 @@ import BridgePattern.ICanvasDevice;
  *
  * @author csc190
  */
-public class Rocket extends Sprite {
+public class Bomb extends Projectile{
 
-    public Rocket(Team team, int x, int y, int w, int h, int lifepoints) {
-        super(team, x, y, w, h, lifepoints, 0, 0);
+    public Bomb(Team team, int x, int y, int w, int h, int lifepoints, int altitude, int block_score, int destx, int desty) {
+        super(team, x, y, w, h, lifepoints, altitude, block_score, destx, desty);
     }
 
     @Override

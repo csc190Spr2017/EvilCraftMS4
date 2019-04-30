@@ -23,7 +23,7 @@ import BridgePattern.ICanvasDevice;
  *
  * @author csc190
  */
-public class Infantry extends Sprite{
+public class Infantry extends ArmyUnit{
 
     public Infantry(Team team, int x, int y, int w, int h) {
         super(team, x, y, w, h, 20, 0, 0);
@@ -56,6 +56,31 @@ public class Infantry extends Sprite{
 
     @Override
     public void adjustBodyHeading(Point pt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void resetCoolRate() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public SpriteInfo getFiringGoal() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean isGunFacing(Point goal) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void adjustGunHeading(Point goal) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void fireAt(Point pt) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

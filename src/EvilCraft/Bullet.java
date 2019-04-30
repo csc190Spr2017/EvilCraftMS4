@@ -23,7 +23,7 @@ import BridgePattern.ICanvasDevice;
  * Bullets are fired by infantry
  * @author csc190
  */
-public class Bullet extends Sprite{
+public class Bullet extends Projectile{
 
     /**
      * Note altitude decides if it hits units in sky or not
@@ -35,8 +35,8 @@ public class Bullet extends Sprite{
      * @param lifepoints
      * @param altitude 
      */
-    public Bullet(Team team, int x, int y, int w, int h, int lifepoints, int altitude) {
-        super(team, x, y, w, h, lifepoints, altitude, 0);
+    public Bullet(Team team, int x, int y, int w, int h, int lifepoints, int altitude, int destx, int desty) {
+        super(team, x, y, w, h, lifepoints, altitude, 0, destx, desty);
     }
 
     @Override

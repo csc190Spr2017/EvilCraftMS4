@@ -30,8 +30,7 @@ public abstract class Sprite {
     private int altitude, blocking_score;
     protected Team team;
     protected boolean bDead = false;
-    protected String attackGoal = null;
-    protected Point navigationGoal = null;
+    
     private int lifepoints;
     protected String id;
     
@@ -45,21 +44,6 @@ public abstract class Sprite {
         if(lifepoints<0) lifepoints=0;
     }
     
-    /**
-     * Set the long term navigation goal to pt
-     * @param pt 
-     */
-    public void setNavigationGoal(Point pt){
-        this.navigationGoal = pt;
-    }
-    
-    /**
-     * Set the PRIORITY attack goal. If sp is in the range, it should be attacked first.
-     * @param sp 
-     */
-    public void setAttackGoal(String sp){
-        this.attackGoal = sp;
-    }
     public void setDead(){
         this.bDead = true;
     }
@@ -73,19 +57,7 @@ public abstract class Sprite {
         this.y = y;
     }
     
-    /**
-     * Get next move (for next tick), seek approval from game engine, and turn body if necessary.
-     * NOTE this implementation only addresses  C3.2 BUT NOT C3.3
-     * You got to check C3.3.2 Sequence diagram, which shows how to
-     * decide next move based on navigation map.
-     */
-    final protected void setNextMove(){      
-        Point pt = this.getNextMove(); //virtual function
-        GameEngine ge = GameEngine.getInstance();
-        if(ge.approveNextMove(this, pt, this.w, this.h)){
-            this.setPos(pt.x, pt.y);
-        }
-    }
+    
     
     
     public Sprite(Team team, int x, int y, int w, int h, int lifepoints, int altitude, int block_score){
@@ -152,11 +124,24 @@ public abstract class Sprite {
     public abstract void drawOnMiniMap(ICanvasDevice minimap);
     
     /**
+     * Get next move (for next tick), seek approval from game engine, and turn body if necessary.
+     * NOTE this implementation only addresses  C3.2 BUT NOT C3.3
+     * You got to check C3.3.2 Sequence diagram, which shows how to
+     * decide next move based on navigation map.
+     */
+    final protected void setNextMove(){      
+        Point pt = this.getNextMove(); //virtual function
+        GameEngine ge = GameEngine.getInstance();
+        if(ge.approveNextMove(this, pt, this.w, this.h)){
+            this.setPos(pt.x, pt.y);
+        }
+    }
+    
+     /**
      * To be implemented by all sprites.
      * @return 
      */
     public abstract Point getNextMove();
-    
     /**
      * if the body of the sprite is heading to pt
      * @param pt

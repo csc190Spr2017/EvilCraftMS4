@@ -23,10 +23,10 @@ import BridgePattern.ICanvasDevice;
  * Shells are fired by tanks
  * @author csc190
  */
-public class Shell extends Sprite{
+public class Shell extends Projectile{
 
-    public Shell(Team team, int x, int y, int w, int h, int lifepoints) {
-        super(team, x, y, w, h, lifepoints, 0, 0);
+    public Shell(Team team, int x, int y, int w, int h, int lifepoints, int destx, int desty) {
+        super(team, x, y, w, h, lifepoints, 0, 0, destx, desty);
     }
 
     @Override

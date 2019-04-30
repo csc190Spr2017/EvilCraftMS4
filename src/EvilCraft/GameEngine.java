@@ -244,4 +244,15 @@ public class GameEngine implements IGameEngine{
         throw new UnsupportedOperationException("not implemented yet");
     }
     
+    /**
+     * Check sequence diagram (2) in D1
+     * (1) check if projectile has requested damage before
+     * (2) if not, use getArrSprites to get the list of victimes
+     * (3) call reducelifepoints for victimes
+     * @param projectile 
+     */
+    public void requestDamage(Projectile projectile){
+        throw new UnsupportedOperationException("not implemented yet");
+    }
+    
 }
